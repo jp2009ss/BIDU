@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Bidu – Lista de espera</title>
+    <meta name="description" content="Entre na lista de espera do Bidu e seja avisado quando os passeios para o seu pet começarem.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
+    <link rel="stylesheet" href="lista.css">
+  </head>
+  <body>
+    <main class="wrap">
+      <a class="brand" href="#topo" id="topo"><img src="logo.png" alt="" width="52" height="53">Bidu</a>
+      <h1>Entre na fila do Bidu.</h1>
+      <p>Estamos preparando o lançamento. Quem entra na lista recebe o aviso assim que os passeios começarem.</p>
+      <div class="count" role="group" aria-labelledby="lbl">
+        <span class="n" id="n" aria-hidden="true">0</span>
+        <span class="sr" id="srn"></span>
+        <span class="l" id="lbl">pessoas na lista</span>
+      </div>
+      <div class="track" aria-hidden="true">
+        <div class="done" id="done"></div>
+        <img id="mk" src="logo.png" alt="" width="44" height="45">
+      </div>
+      <p class="goal">
+        <span id="first" hidden>Seja a primeira pessoa da lista.</span>
+        <span id="goalTxt"></span>
+      </p>
+      <div class="actions">
+        <a class="btn" href="#" data-form>Entrar na lista como tutor</a>
+        <a class="btn ghost" href="#" data-form>Quero ser cuidador</a>
+      </div>
+      <p id="msg" hidden>O formulário abre em breve. Volte para conferir.</p>
+      <p class="back"><a href="index.html">Conheça o Bidu</a></p>
+    </main>
+    <script src="lista.js"></script>
+  </body>
+</html>

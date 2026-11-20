@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Bidu – passeios para o seu pet, com acompanhamento ao vivo</title>
+    <meta name="description" content="O Bidu leva um cuidador treinado até a sua casa e você acompanha o passeio do seu pet em tempo real.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="hero" id="topo">
+      <div class="wrap">
+        <div class="top">
+          <a class="brand" href="#topo"><img src="logo.png" alt="" width="52" height="53">Bidu</a>
+          <nav aria-label="Principal">
+            <a href="#como">Como funciona</a>
+            <a href="#confianca">Confiança</a>
+            <a href="#cuidador">Seja cuidador</a>
+            <a href="#faq">Perguntas</a>
+          </nav>
+        </div>
+        <div class="heroGrid">
+          <div>
+            <h1>Seu melhor amigo pediu um passeio.</h1>
+            <p class="lead">O Bidu leva um cuidador treinado até a sua casa. Você acompanha o trajeto ao vivo, do início ao fim.</p>
+            <div class="cta">
+              <a class="btn" href="#lista" data-waitlist>Entrar na lista de espera</a>
+              <a class="btn ghost" href="#como">Ver como funciona</a>
+            </div>
+          </div>
+          <div class="route">
+            <svg viewBox="0 0 520 560" role="img" aria-label="Mapa com o trajeto de um passeio, da casa até o parque">
+              <path id="rt" d="M50 500 C130 430 30 350 150 300 S320 340 330 230 S440 120 470 60" fill="none" stroke="#F08A2E" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 16"/>
+              <circle cx="50" cy="500" r="9" fill="#FFF3E2"/>
+              <text x="68" y="528" fill="#FFF3E2" font-size="22" font-family="Figtree,sans-serif">Casa</text>
+              <circle cx="470" cy="60" r="9" fill="#FFF3E2"/>
+              <text x="372" y="38" fill="#FFF3E2" font-size="22" font-family="Figtree,sans-serif">Parque</text>
+              <g id="mk">
+                <image href="logo.png" x="-30" y="-30" width="60" height="61">
+                  <animateMotion id="mv" dur="7s" begin="0.5s" fill="freeze" path="M50 500 C130 430 30 350 150 300 S320 340 330 230 S440 120 470 60"/>
+                </image>
+              </g>
+            </svg>
+            <div class="tracker"><b>Passeio em andamento</b>28 min · 1,3 km<br>Exemplo ilustrativo</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="como">
+        <div class="wrap steps">
+          <div>
+            <h2>Do pedido ao passeio, em quatro passos</h2>
+          </div>
+          <ol>
+            <li>
+              <h3>Peça o passeio</h3>
+              <p>Cadastre o seu pet e escolha o dia, o horário e a duração.</p>
+            </li>
+            <li>
+              <h3>Escolha o cuidador</h3>
+              <p>Veja a nota e o nível de cada um. Escolha uma das nossas rotas ou deixe o cuidador decidir.</p>
+            </li>
+            <li>
+              <h3>Acompanhe ao vivo</h3>
+              <p>O cuidador vai até a sua casa e você vê o trajeto no mapa durante todo o passeio. O pagamento é feito no app.</p>
+            </li>
+            <li>
+              <h3>Receba o resumo e avalie</h3>
+              <p>Veja o tempo e a distância, confirme a coleta de dejetos e dê estrelas ao cuidador.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+      <section class="proof" id="confianca">
+        <div class="wrap">
+          <p class="big">70,5% dos 44 tutores que ouvimos disseram que acompanhar o passeio no mapa ajuda muito a confiar.</p>
+          <div class="rows">
+            <div>
+              <h3>Rastreio ao vivo</h3>
+              <p>Veja onde o seu pet está durante todo o passeio.</p>
+            </div>
+            <div>
+              <h3>Cuidadores selecionados e treinados</h3>
+              <p>Documento verificado, treinamento antes de começar e avaliações de outros tutores.</p>
+            </div>
+            <div>
+              <h3>Rotas definidas</h3>
+              <p>Trajetos pensados para passear com segurança.</p>
+            </div>
+            <div>
+              <h3>Coleta de dejetos incluída</h3>
+              <p>O cuidador recolhe e confirma no app.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="wrap rank">
+          <div>
+            <h2>Quem cuida bem sobe de nível</h2>
+            <p class="sub">Cuidadores ganham nível pelas notas, pela pontualidade e pelos passeios concluídos. Os pets também: cada passeio rende conquistas.</p>
+          </div>
+          <div class="ladders">
+            <div>
+              <h3>Cuidador</h3>
+              <div class="stairs">
+                <span>Iniciante</span>
+                <span>Dedicado</span>
+                <span>Destaque</span>
+                <span>Elite Bidu</span>
+              </div>
+            </div>
+            <div>
+              <h3>Pet</h3>
+              <div class="stairs">
+                <span>Filhote</span>
+                <span>Explorador</span>
+                <span>Atleta</span>
+                <span>Lenda</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="band" id="cuidador">
+        <div class="wrap">
+          <h2>Gosta de bicho e de caminhar? Seja um cuidador Bidu.</h2>
+          <p>Cadastro com documento, treinamento antes do primeiro passeio e pagamento liberado pelo app ao fim de cada passeio.</p>
+          <a class="btn" href="#lista" data-waitlist>Quero ser cuidador</a>
+        </div>
+      </section>
+      <section id="faq">
+        <div class="wrap faq">
+          <h2>Perguntas frequentes</h2>
+          <div>
+            <details>
+              <summary>O rastreio funciona o tempo todo?</summary>
+              <p>Funciona durante todo o passeio, do início ao fim. Fora do passeio, a localização do cuidador não é compartilhada.</p>
+            </details>
+            <details>
+              <summary>Como os cuidadores são escolhidos?</summary>
+              <p>Eles passam por cadastro com documento e por treinamento antes de liberar o perfil, e são avaliados pelos tutores depois de cada passeio.</p>
+            </details>
+            <details>
+              <summary>Como eu pago?</summary>
+              <p>Pelo próprio app. O valor só é liberado ao cuidador depois do passeio.</p>
+            </details>
+            <details>
+              <summary>Quando o Bidu começa a funcionar?</summary>
+              <p>Estamos em fase de validação. Entre na lista de espera para ser avisado.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="lista">
+      <div class="wrap">
+        <h2>Seu pet merece o próximo passeio.</h2>
+        <a class="btn" id="listaBtn" data-waitlist hidden href="#lista">Entrar na lista de espera</a>
+        <p id="listaMsg">A lista de espera abre em breve. Volte para conferir.</p>
+        <p class="small">© 2026 Bidu. Projeto em fase de validação.</p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
