@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Bidu – passeios para o seu pet, com acompanhamento ao vivo</title>
     <meta name="description" content="O Bidu leva um cuidador treinado até a sua casa e você acompanha o passeio do seu pet em tempo real.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://connect.facebook.net;">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
@@ -162,7 +163,11 @@
         <h2>Seu pet merece o próximo passeio.</h2>
         <a class="btn" id="listaBtn" data-waitlist hidden href="#lista">Entrar na lista de espera</a>
         <p id="listaMsg">A lista de espera abre em breve. Volte para conferir.</p>
-        <p class="small">© 2026 Bidu. Projeto em fase de validação.</p>
+        <p class="small">
+          © 2026 Bidu. Projeto em fase de validação.<br>
+          <a href="#">Política de Privacidade</a> • <a href="#">Termos de Uso</a><br>
+          Bidu Pets Ltda. • CNPJ 00.000.000/0001-00 • contato@biduapp.com.br
+        </p>
       </div>
     </footer>
     <script src="script.js"></script>

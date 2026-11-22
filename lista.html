@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Bidu – Lista de espera & Cadastro</title>
     <meta name="description" content="Entre na lista de espera do Bidu e seja avisado quando os passeios para o seu pet começarem.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://connect.facebook.net https://wa.me;">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
@@ -91,7 +92,12 @@
         </div>
       </section>
 
-      <p class="back"><a href="index.html">← Voltar para a página inicial</a></p>
+      <p class="back" style="margin-bottom: 2rem;"><a href="index.html">← Voltar para a página inicial</a></p>
+
+      <footer style="border-top: 1px solid var(--brown); padding-top: 1.5rem; font-size: 0.85rem; color: var(--sand); opacity: 0.8;">
+        <p>© 2026 Bidu. <a href="#" style="color: inherit;">Privacidade</a> • <a href="#" style="color: inherit;">Termos</a></p>
+        <p>Bidu Pets Ltda. • CNPJ 00.000.000/0001-00</p>
+      </footer>
     </main>
     <script src="lista.js"></script>
   </body>
