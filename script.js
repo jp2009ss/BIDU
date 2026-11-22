@@ -23,16 +23,18 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll(".stairs").forEach(s => obs.observe(s));
 
 // Cookie Banner Logic
-const cookieBanner = document.getElementById("cookie-banner");
-if (cookieBanner && !localStorage.getItem("cookieConsent")) {
-  cookieBanner.style.display = "flex";
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const cookieBanner = document.getElementById("cookie-banner");
+  if (cookieBanner && !localStorage.getItem("cookieConsent")) {
+    cookieBanner.style.display = "flex";
+  }
 
-const acceptBtn = document.getElementById("accept-cookies");
-if (acceptBtn) {
-  acceptBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    localStorage.setItem("cookieConsent", "accepted");
-    if (cookieBanner) cookieBanner.hidden = true;
-  });
-}
+  const acceptBtn = document.getElementById("accept-cookies");
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.setItem("cookieConsent", "accepted");
+      if (cookieBanner) cookieBanner.hidden = true;
+    });
+  }
+});
