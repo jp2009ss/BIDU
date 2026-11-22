@@ -307,42 +307,35 @@ li p,
 .stairs {
   display: flex;
   align-items: flex-end;
-  gap: 6px;
+  gap: 12px;
   height: 190px;
 }
+
 
 .stairs span {
   flex: 1;
   display: flex;
   align-items: flex-end;
   padding: .4rem;
-  font-size: .85rem;
+  font-size: .95rem;
   font-weight: 600;
   line-height: 1.2;
   background: var(--orange);
   color: var(--ink);
   border-radius: 6px 6px 0 0;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.stairs span:nth-child(1) {
-  height: 30%;
-  background: #F7C089;
+.stairs.animate-in span {
+  transform: scaleY(1);
 }
 
-.stairs span:nth-child(2) {
-  height: 52%;
-  background: #F4A25A;
-}
-
-.stairs span:nth-child(3) {
-  height: 76%;
-}
-
-.stairs span:nth-child(4) {
-  height: 100%;
-  background: var(--accent);
-  color: var(--cream);
-}
+.stairs span:nth-child(1) { height: 30%; background: #F7C089; transition-delay: 0.1s; }
+.stairs span:nth-child(2) { height: 52%; background: #F4A25A; transition-delay: 0.2s; }
+.stairs span:nth-child(3) { height: 76%; transition-delay: 0.3s; }
+.stairs span:nth-child(4) { height: 100%; background: var(--accent); color: var(--cream); transition-delay: 0.4s; flex: 1.3; }
 
 .band {
   background: var(--brown);
@@ -432,5 +425,8 @@ footer .small {
 @media (prefers-reduced-motion:reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .stairs span {
+    animation: none;
   }
 }
