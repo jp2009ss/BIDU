@@ -184,10 +184,26 @@ section {
   position: relative;
 }
 
+@keyframes drawPath {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes flowDashes {
+  from { stroke-dashoffset: 40; }
+  to { stroke-dashoffset: 0; }
+}
+
 .route svg {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.route #rt {
+  stroke-dasharray: 4 16;
+  stroke-dashoffset: 0;
+  animation: flowDashes 2s linear infinite;
 }
 
 .tracker {

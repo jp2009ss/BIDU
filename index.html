@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Bidu – passeios para o seu pet, com acompanhamento ao vivo</title>
     <meta name="description" content="O Bidu leva um cuidador treinado até a sua casa e você acompanha o passeio do seu pet em tempo real.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://connect.facebook.net;">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
@@ -39,9 +40,9 @@
               <circle cx="470" cy="60" r="9" fill="#FFF3E2"/>
               <text x="372" y="38" fill="#FFF3E2" font-size="22" font-family="Figtree,sans-serif">Parque</text>
               <g id="mk">
-                <image href="img/logo.png" x="-30" y="-30" width="60" height="61">
-                  <animateMotion id="mv" dur="7s" begin="0.5s" fill="freeze" path="M50 500 C130 430 30 350 150 300 S320 340 330 230 S440 120 470 60"/>
-                </image>
+                <circle cx="50" cy="500" r="14" fill="#F08A2E" opacity="0.9">
+                  <animateMotion dur="10s" repeatCount="indefinite" path="M50 500 C130 430 30 350 150 300 S320 340 330 230 S440 120 470 60 L470 60 C440 120 320 340 330 230 S150 300 30 350 C130 430 50 500 50 500"/>
+                </circle>
               </g>
             </svg>
             <div class="tracker"><b>Passeio em andamento</b>28 min · 1,3 km<br>Exemplo ilustrativo</div>
@@ -162,7 +163,11 @@
         <h2>Seu pet merece o próximo passeio.</h2>
         <a class="btn" id="listaBtn" data-waitlist hidden href="#lista">Entrar na lista de espera</a>
         <p id="listaMsg">A lista de espera abre em breve. Volte para conferir.</p>
-        <p class="small">© 2026 Bidu. Projeto em fase de validação.</p>
+        <p class="small">
+          © 2026 Bidu. Projeto em fase de validação.<br>
+          <a href="privacidade.html">Política de Privacidade</a> • <a href="termos.html">Termos de Uso</a><br>
+          Bidu Pets Ltda. • CNPJ 00.000.000/0001-00 • contato@biduapp.com.br
+        </p>
       </div>
     </footer>
     <script src="script.js"></script>
