@@ -16,8 +16,8 @@
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._infer)f._queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+      t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', 'SEU_PIXEL_ID');
@@ -95,7 +95,7 @@
       <p class="back" style="margin-bottom: 2rem;"><a href="index.html">← Voltar para a página inicial</a></p>
 
       <footer style="border-top: 1px solid var(--brown); padding-top: 1.5rem; font-size: 0.85rem; color: var(--sand); opacity: 0.8;">
-        <p>© 2026 Bidu. <a href="#" style="color: inherit;">Privacidade</a> • <a href="#" style="color: inherit;">Termos</a></p>
+        <p>© 2026 Bidu. <a href="privacidade.html" style="color: inherit;">Privacidade</a> • <a href="termos.html" style="color: inherit;">Termos</a></p>
         <p>Bidu Pets Ltda. • CNPJ 00.000.000/0001-00</p>
       </footer>
     </main>
