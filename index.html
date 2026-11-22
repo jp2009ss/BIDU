@@ -39,9 +39,33 @@
               <text x="68" y="528" fill="#FFF3E2" font-size="22" font-family="Figtree,sans-serif">Casa</text>
               <circle cx="470" cy="60" r="9" fill="#FFF3E2"/>
               <text x="372" y="38" fill="#FFF3E2" font-size="22" font-family="Figtree,sans-serif">Parque</text>
-              <g id="mk">
-                <image href="img/logo.png" x="-30" y="-30" width="60" height="61">
-                  <animateMotion id="mv" dur="7s" begin="0.5s" fill="freeze" path="M50 500 C130 430 30 350 150 300 S320 340 330 230 S440 120 470 60"/>
+              <g id="mk" transform="translate(50, 500)">
+                <!-- Walking person marker -->
+                <circle cx="0" cy="0" r="18" fill="#F08A2E" opacity="0.25">
+                  <animate attributeName="r" values="18;28;18" dur="1.2s" repeatCount="indefinite" begin="0.5s"/>
+                  <animate attributeName="opacity" values="0.25;0.05;0.25" dur="1.2s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+                <circle cx="0" cy="-22" r="8" fill="#F08A2E" stroke="#FFF3E2" stroke-width="2">
+                  <animateMotion dur="7s" begin="0.5s" fill="freeze" path="M0 0 C80 -70 -20 -150 100 -200 S270 -160 280 -270 S390 -380 420 -440"/>
+                </circle>
+                <ellipse cx="0" cy="-10" rx="10" ry="14" fill="#F08A2E" stroke="#FFF3E2" stroke-width="2">
+                  <animateMotion dur="7s" begin="0.5s" fill="freeze" path="M0 0 C80 -70 -20 -150 100 -200 S270 -160 280 -270 S390 -380 420 -440"/>
+                </ellipse>
+                <!-- Legs walking animation -->
+                <g fill="#F08A2E" stroke="#FFF3E2" stroke-width="1.5">
+                  <ellipse cx="-5" cy="4" rx="3" ry="7">
+                    <animateMotion dur="7s" begin="0.5s" fill="freeze" path="M0 0 C80 -70 -20 -150 100 -200 S270 -160 280 -270 S390 -380 420 -440"/>
+                    <animate attributeName="ry" values="7;4;7" dur="0.5s" repeatCount="indefinite" begin="0.5s"/>
+                  </ellipse>
+                  <ellipse cx="5" cy="4" rx="3" ry="7">
+                    <animateMotion dur="7s" begin="0.5s" fill="freeze" path="M0 0 C80 -70 -20 -150 100 -200 S270 -160 280 -270 S390 -380 420 -440"/>
+                    <animate attributeName="ry" values="4;7;4" dur="0.5s" repeatCount="indefinite" begin="0.5s"/>
+                  </ellipse>
+                </g>
+                <!-- Logo at destination (park) -->
+                <image href="img/logo.png" x="-30" y="-30" width="60" height="61" opacity="0">
+                  <animate attributeName="opacity" values="0;1" dur="0.5s" begin="7.5s" fill="freeze"/>
+                  <animateTransform attributeName="transform" type="scale" values="0;1.2;1" dur="0.6s" begin="7.5s" fill="freeze"/>
                 </image>
               </g>
             </svg>
