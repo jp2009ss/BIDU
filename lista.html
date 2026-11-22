@@ -3,37 +3,95 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <title>Bidu – Lista de espera</title>
+    <title>Bidu – Lista de espera & Cadastro</title>
     <meta name="description" content="Entre na lista de espera do Bidu e seja avisado quando os passeios para o seu pet começarem.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
     <link rel="stylesheet" href="lista.css">
+
+    <!-- Meta Pixel Code (Substitua SEU_PIXEL_ID pelo seu ID real do Meta Pixel) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._infer)f._queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'SEU_PIXEL_ID');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <main class="wrap">
-      <a class="brand" href="#topo" id="topo"><img src="img/logo.png" alt="" width="52" height="53">Bidu</a>
-      <h1>Entre na fila do Bidu.</h1>
-      <p>Estamos preparando o lançamento. Quem entra na lista recebe o aviso assim que os passeios começarem.</p>
-      <div class="count" role="group" aria-labelledby="lbl">
-        <span class="n" id="n" aria-hidden="true">0</span>
-        <span class="sr" id="srn"></span>
-        <span class="l" id="lbl">pessoas na lista</span>
+      <a class="brand" href="index.html" id="topo"><img src="img/logo.png" alt="" width="52" height="53">Bidu</a>
+
+      <div id="intro-view">
+        <h1>Entre na fila do Bidu.</h1>
+        <p>Estamos preparando o lançamento. Quem entra na lista recebe o aviso assim que os passeios começarem.</p>
+        <div class="count" role="group" aria-labelledby="lbl">
+          <span class="n" id="n" aria-hidden="true">142</span>
+          <span class="sr" id="srn"></span>
+          <span class="l" id="lbl">pessoas na lista</span>
+        </div>
+        <div class="track" aria-hidden="true">
+          <div class="done" id="done" style="width: 70%;"></div>
+          <img id="mk" src="img/logo.png" alt="" width="44" height="45" style="left: 70%;">
+        </div>
+        <p class="goal">
+          <span id="first" hidden>Seja a primeira pessoa da lista.</span>
+          <span id="goalTxt">Meta: 200 pessoas</span>
+        </p>
+
+        <div class="actions">
+          <button class="btn" id="openFormBtn">Garantir meu lugar na lista</button>
+          <a class="btn ghost" href="index.html">Conhecer o Bidu</a>
+        </div>
       </div>
-      <div class="track" aria-hidden="true">
-        <div class="done" id="done"></div>
-        <img id="mk" src="img/logo.png" alt="" width="44" height="45">
-      </div>
-      <p class="goal">
-        <span id="first" hidden>Seja a primeira pessoa da lista.</span>
-        <span id="goalTxt"></span>
-      </p>
-      <div class="actions">
-        <a class="btn" href="#" data-form>Entrar na lista como tutor</a>
-        <a class="btn ghost" href="#" data-form>Quero ser cuidador</a>
-      </div>
-      <p id="msg" hidden>O formulário abre em breve. Volte para conferir.</p>
-      <p class="back"><a href="index.html">Conheça o Bidu</a></p>
+
+      <!-- Formulário de Captura (Lead / CRM / WhatsApp / Planilha) -->
+      <section id="form-section" class="form-card" style="display:none;">
+        <h2>Cadastre-se na Lista VIP</h2>
+        <p>Preencha seus dados para receber o acesso antecipado e falar direto com nossa equipe.</p>
+
+        <form id="leadForm" class="lead-form">
+          <div class="field">
+            <label for="nome">Seu Nome</label>
+            <input type="text" id="nome" name="nome" required placeholder="Ex: Maria Silva">
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp / Telefone</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(11) 99999-9999">
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="voce@exemplo.com">
+          </div>
+          <div class="field">
+            <label for="perfil">Você é:</label>
+            <select id="perfil" name="perfil">
+              <option value="Tutor">Tutor (Tenho Pet)</option>
+              <option value="Cuidador">Quero ser Cuidador</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn" id="submitWhatsapp">Entrar via WhatsApp & Salvar</button>
+            <button type="button" class="btn ghost" id="backBtn">Voltar</button>
+          </div>
+        </form>
+
+        <div id="successMessage" hidden class="success-box">
+          <h3>🎉 Cadastro realizado com sucesso!</h3>
+          <p>Você foi redirecionado para o WhatsApp e seus dados foram salvos na nossa base de contatos.</p>
+          <a href="index.html" class="btn" style="margin-top: 1rem;">Voltar ao início</a>
+        </div>
+      </section>
+
+      <p class="back"><a href="index.html">← Voltar para a página inicial</a></p>
     </main>
     <script src="lista.js"></script>
   </body>

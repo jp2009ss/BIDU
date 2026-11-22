@@ -141,6 +141,7 @@ p {
   font-weight: 600;
   text-decoration: none;
   border: 2px solid var(--orange);
+  cursor: pointer;
 }
 
 .btn.ghost {
@@ -153,19 +154,73 @@ p {
   filter: brightness(1.08);
 }
 
-.btn[aria-disabled="true"] {
-  opacity: .5;
-  pointer-events: none;
+.form-card {
+  background: #2A1A10;
+  border: 2px solid var(--brown);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1.5rem;
 }
 
-:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 3px;
+.form-card h2 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--cream);
 }
 
-#msg {
-  margin-top: 1rem;
+.lead-form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--sand);
+}
+
+.field input, .field select {
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--brown);
+  background: var(--ink);
+  color: var(--cream);
   font-size: 1rem;
+  font-family: inherit;
+}
+
+.field input:focus, .field select:focus {
+  outline: 2px solid var(--orange);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.success-box {
+  background: #1e3a2f;
+  border: 2px solid #2b7a5e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.success-box h3 {
+  color: #6ee7b7;
+  margin-bottom: 0.5rem;
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .back {
@@ -175,15 +230,6 @@ p {
 
 .back a {
   color: var(--cream);
-}
-
-.sr {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
 }
 
 [hidden] {
