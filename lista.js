@@ -1,7 +1,7 @@
 // Bidu: lista de espera & Gestão de Leads
 
 function initBidu() {
-  const COUNT = 142;    // número atual
+  const COUNT = 0;    // número atual
   const GOAL = 200;      // meta
   const WHATSAPP_NUMBER = "5511999999999"; // Substitua pelo seu WhatsApp real
 
