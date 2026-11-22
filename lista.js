@@ -116,6 +116,5 @@ function initBidu() {
   }
 }
 
-// Executa imediatamente e no DOMContentLoaded por segurança
-initBidu();
+// Executa no DOMContentLoaded por segurança
 document.addEventListener("DOMContentLoaded", initBidu);
