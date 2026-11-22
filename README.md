@@ -13,9 +13,3 @@ Plataforma de passeios para pets com acompanhamento ao vivo. O Bidu conecta tuto
 - JavaScript (Vanilla)
 - SVG Animations (Map route & Tracking)
 
-## Como rodar localmente
-1. Clone o repositório.
-2. Abra o arquivo `index.html` diretamente no seu navegador.
-
----
-🤖 Gerado com [Claude Code](https://claude.com/claude-code)
