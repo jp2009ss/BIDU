@@ -24,11 +24,15 @@ document.querySelectorAll(".stairs").forEach(s => obs.observe(s));
 
 // Cookie Banner Logic
 const cookieBanner = document.getElementById("cookie-banner");
-if (!localStorage.getItem("cookieConsent")) {
+if (cookieBanner && !localStorage.getItem("cookieConsent")) {
   cookieBanner.style.display = "flex";
 }
 
-document.getElementById("accept-cookies").addEventListener("click", () => {
-  localStorage.setItem("cookieConsent", "accepted");
-  cookieBanner.hidden = true;
+const acceptBtn = document.getElementById("accept-cookies");
+if (acceptBtn) {
+  acceptBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("cookieConsent", "accepted");
+    if (cookieBanner) cookieBanner.hidden = true;
+  });
 }
