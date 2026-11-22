@@ -21,3 +21,14 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll(".stairs").forEach(s => obs.observe(s));
+
+// Cookie Banner Logic
+const cookieBanner = document.getElementById("cookie-banner");
+if (!localStorage.getItem("cookieConsent")) {
+  cookieBanner.style.display = "flex";
+}
+
+document.getElementById("accept-cookies").addEventListener("click", () => {
+  localStorage.setItem("cookieConsent", "accepted");
+  cookieBanner.hidden = true;
+}
