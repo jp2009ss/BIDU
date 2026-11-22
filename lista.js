@@ -1,17 +1,22 @@
 // Bidu: lista de espera & Gestão de Leads
-document.addEventListener("DOMContentLoaded", () => {
+
+function initBidu() {
   const COUNT = 142;    // número atual
   const GOAL = 200;      // meta
   const WHATSAPP_NUMBER = "5511999999999"; // Substitua pelo seu WhatsApp real
 
   // UI Elements
-  const n = document.getElementById("n"), mk = document.getElementById("mk"), done = document.getElementById("done");
+  const n = document.getElementById("n");
+  const mk = document.getElementById("mk");
+  const done = document.getElementById("done");
   const introView = document.getElementById("intro-view");
   const formSection = document.getElementById("form-section");
   const leadForm = document.getElementById("leadForm");
   const openFormBtn = document.getElementById("openFormBtn");
   const backBtn = document.getElementById("backBtn");
   const successMessage = document.getElementById("successMessage");
+
+  console.log("Bidu: Iniciando script", { openFormBtn: !!openFormBtn, leadForm: !!leadForm });
 
   // 1. UTM Tracking
   function getUTMs() {
@@ -36,6 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if(done) done.style.width = p + "%";
   }
 
+  // Reseta estado para animar
+  if (n) n.textContent = "0";
+  if (mk) mk.style.left = "0%";
+  if (done) done.style.width = "0%";
+
   if (matchMedia("(prefers-reduced-motion: reduce)").matches || COUNT === 0) {
     draw(1);
   } else {
@@ -49,24 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Lógica do Formulário
   if (openFormBtn) {
-    openFormBtn.onclick = () => {
-      introView.style.display = 'none';
-      formSection.style.display = 'block';
+    openFormBtn.onclick = (e) => {
+      e.preventDefault();
+      console.log("Bidu: Abrindo formulário");
+      if (introView) introView.style.display = 'none';
+      if (formSection) formSection.style.display = 'block';
       // Evento Pixel: Iniciou cadastro
       if (typeof fbq === 'function') fbq('track', 'Lead', { step: 'init' });
     };
   }
 
   if (backBtn) {
-    backBtn.onclick = () => {
-      introView.style.display = 'block';
-      formSection.style.display = 'none';
+    backBtn.onclick = (e) => {
+      e.preventDefault();
+      if (introView) introView.style.display = 'block';
+      if (formSection) formSection.style.display = 'none';
     };
   }
 
   if (leadForm) {
     leadForm.onsubmit = async (e) => {
       e.preventDefault();
+      console.log("Bidu: Enviando formulário");
+
       const formData = new FormData(leadForm);
       const data = {
         nome: formData.get('nome'),
@@ -77,8 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timestamp: new Date().toISOString()
       };
 
-      // a. Salvar no CRM Local / Simulação de API
-      console.log("Salvando Lead:", data);
+      // a. Salvar no CRM Local
       localStorage.setItem('lastLead', JSON.stringify(data));
 
       // c. Pixel Lead Success
@@ -88,13 +102,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const msg = `Olá! Meu nome é ${data.nome} (${data.perfil}). Gostaria de entrar na lista VIP do Bidu! 🐾\nE-mail: ${data.email}`;
       const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
-      leadForm.hidden = true;
-      successMessage.hidden = false;
+      leadForm.style.display = 'none';
+      if (successMessage) {
+        successMessage.hidden = false;
+        successMessage.style.display = 'block';
+      }
 
-      // Aguarda um pouco e abre o WhatsApp
+      console.log("Bidu: Redirecionando para WhatsApp");
       setTimeout(() => {
         window.open(waLink, '_blank');
-      }, 1500);
+      }, 800);
     };
   }
-});
+}
+
+// Executa imediatamente e no DOMContentLoaded por segurança
+initBidu();
+document.addEventListener("DOMContentLoaded", initBidu);
