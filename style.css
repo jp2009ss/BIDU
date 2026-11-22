@@ -484,4 +484,6 @@ footer .small {
   font-size: .95rem;
   padding: .6rem 1.3rem;
   min-height: 40px;
+  color: var(--ink) !important;
+  background: var(--orange);
 }
