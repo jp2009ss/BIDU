@@ -204,8 +204,29 @@ p {
 
 .form-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  font-size: .95rem;
+  color: var(--sand);
+}
+
+.consent input {
+  width: 22px;
+  height: 22px;
+  margin-top: .15rem;
+  flex: none;
+  accent-color: var(--orange);
+}
+
+.consent a {
+  color: var(--cream);
 }
 
 .success-box {
@@ -232,6 +253,80 @@ p {
   color: var(--cream);
 }
 
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 [hidden] {
   display: none!important;
+}
+
+/* Cookie banner */
+#cookie-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  translate: -50% 0;
+  width: min(560px, 100% - 2rem);
+  background: var(--brown);
+  color: var(--cream);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 8px 32px #0005;
+  z-index: 999;
+  font-size: 1rem;
+}
+
+#cookie-banner p {
+  flex: 1;
+  min-width: 200px;
+  margin: 0;
+  color: #EBD9C2;
+  font-size: .95rem;
+}
+
+#cookie-banner a {
+  color: var(--orange);
+}
+
+#cookie-banner .cookie-actions {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+#cookie-banner .btn {
+  white-space: nowrap;
+  font-size: .95rem;
+  padding: .6rem 1.3rem;
+  min-height: 40px;
+  color: var(--ink);
+  background: var(--orange);
+  cursor: pointer;
+}
+
+#cookie-banner .btn.ghost {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--cream);
+}
+
+button.btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }

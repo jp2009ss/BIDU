@@ -442,8 +442,12 @@ footer .small {
   html {
     scroll-behavior: auto;
   }
-  .stairs span {
+  .route #rt {
     animation: none;
+  }
+  .stairs span {
+    transition: none;
+    transform: none;
   }
 }
 
@@ -479,11 +483,44 @@ footer .small {
   color: var(--orange);
 }
 
+#cookie-banner .cookie-actions {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
 #cookie-banner .btn {
   white-space: nowrap;
   font-size: .95rem;
   padding: .6rem 1.3rem;
   min-height: 40px;
-  color: var(--ink) !important;
+  color: var(--ink);
   background: var(--orange);
+  cursor: pointer;
+}
+
+#cookie-banner .btn.ghost {
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--cream);
+}
+
+button.btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.motion-toggle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  min-height: 40px;
+  padding: .4rem 1rem;
+  font-size: .9rem;
+}
+
+.route.paused #rt {
+  animation-play-state: paused;
 }

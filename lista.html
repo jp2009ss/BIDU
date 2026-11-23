@@ -10,21 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;600&display=swap">
     <link rel="stylesheet" href="lista.css">
-
-    <!-- Meta Pixel Code (Substitua SEU_PIXEL_ID pelo seu ID real do Meta Pixel) -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
-      t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'SEU_PIXEL_ID');
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-    <!-- End Meta Pixel Code -->
   </head>
   <body>
     <main class="wrap">
@@ -39,8 +24,8 @@
           <span class="l" id="lbl">pessoas na lista</span>
         </div>
         <div class="track" aria-hidden="true">
-          <div class="done" id="done" style="width: 70%;"></div>
-          <img id="mk" src="img/logo.png" alt="" width="44" height="45" style="left: 70%;">
+          <div class="done" id="done"></div>
+          <img id="mk" src="img/logo.png" alt="" width="44" height="45">
         </div>
         <p class="goal">
           <span id="first" hidden>Seja a primeira pessoa da lista.</span>
@@ -79,6 +64,11 @@
             </select>
           </div>
 
+          <div class="consent">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">Li e concordo com a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e aceito receber comunicações do Bidu.</label>
+          </div>
+
           <div class="form-actions">
             <button type="submit" class="btn" id="submitWhatsapp">Entrar via WhatsApp & Salvar</button>
             <button type="button" class="btn ghost" id="backBtn">Voltar</button>
@@ -86,9 +76,12 @@
         </form>
 
         <div id="successMessage" hidden class="success-box">
-          <h3>🎉 Cadastro realizado com sucesso!</h3>
-          <p>Você foi redirecionado para o WhatsApp e seus dados foram salvos na nossa base de contatos.</p>
-          <a href="index.html" class="btn" style="margin-top: 1rem;">Voltar ao início</a>
+          <h3>Quase lá!</h3>
+          <p>Toque no botão abaixo para enviar sua mensagem pelo WhatsApp. É ela que confirma a sua entrada na lista.</p>
+          <div class="form-actions" style="justify-content: center;">
+            <a id="waLink" class="btn" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+            <a href="index.html" class="btn ghost">Voltar ao início</a>
+          </div>
         </div>
       </section>
 
@@ -99,6 +92,7 @@
         <p>Bidu Pets Ltda. • CNPJ 00.000.000/0001-00</p>
       </footer>
     </main>
+    <script src="cookies.js"></script>
     <script src="lista.js"></script>
   </body>
 </html>
